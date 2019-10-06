@@ -1,7 +1,7 @@
-﻿<html>
+<html>
 
 <head>
-    <title>点名器 V2.0.4</title>
+    <title>高三（22）班点名器</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
@@ -40,15 +40,18 @@
 
 <body>
     <center>
-        <img style="margin-top:10px;" width="250px" src="./resource/logo.png"></img>
+	<h1>高三（22）班点名器</h1>
+      
     </center>
     <ul style="margin-top:10px;margin-right:15%;margin-left:15%;" class="nav nav-tabs">
         <li id="page-random-nav" role="presentation" class="active">
             <a href="javascript:changePage('#page-random')">点名</a>
         </li>
-        <li id="page-editname-nav" role="presentation">
+        
+                <li id="page-editname-nav" role="presentation">
             <a href="javascript:changePage('#page-editname')">生成名单</a>
         </li>
+        
         <li id="page-about-nav" role="presentation">
             <a href="javascript:changePage('#page-about')">关于</a>
         </li>
@@ -56,6 +59,21 @@
 
     <!-- 点名页 -->
     <div id="page-random" style="margin-top:20px;">
+	 <center>
+            <div id="div-start">
+                <button class="btn btn-default btn-lg" onclick="javascript:startRandom()" type="button" style="width:50%">
+                    <h4 style="display:inline">开始</h4>
+                </button>
+            </div>
+            <div class="progress" id="div-running" style="display:none;width:50%">
+                <center>
+                    <div id="progressbar" class="progress-bar progress-bar-info progress-bar-striped active" style="width:0%">
+                        <span class="sr-only">Running</span>
+                    </div>
+                </center>
+            </div>
+        </center>
+		<br>
         <div class="panel panel-default" style="margin-right:20%;margin-left:20%;">
             <div class="panel-body namelistdiv" id="namelist"></div>
         </div>
@@ -76,7 +94,7 @@
         </center>
     </div>
 
-    <!-- 名单修改页 -->
+   <!-- 名单修改页 -->
     <div id="page-editname" style="display:none;margin-top:20px;">
         <div class="panel panel-default" style="margin-right:20%;margin-left:20%;">
             <div class="panel-body">
@@ -105,31 +123,10 @@
             <div class="panel-body">
                 <div style="margin-left:5%;margin-right:5%">
                     <h3>关于</h3>
-                    <p>版本：2.0.4</p>
-                    <p>Github：
-                        <a class="text-info" href="https://github.com/Netrvin/RandomName" target="_blank">https://github.com/Netrvin/RandomName</a>
+                    <p>源代码：Github：
+                        <a class="text-info" href="https://github.com/xvwenbo/RandomName" target="_blank">https://github.com/xvwenbo/RandomName</a>
                     </p>
-                    <strong>特性</strong>
-                    <li>自动生成待点名单，避免在名单点完一遍前重复点到同一人</li>
-                    <li>将待点名单用localStorage存储在浏览器中，避免出现运气“过好”的情况（若不存储待点名单，则每次打开浏览器/刷新页面均会重新生成待点名单）</li>
-                    <strong>更新日志</strong>
-                    <p>
-                        <code>V2.0.4</code>：
-                        <strong>新增特性</strong>：“将待点名单用localStorage存储在浏览器中”</p>
-                    <p>
-                        <code>V2.0.3</code>：
-                        <strong>修改协议为BSD-2-Clause</strong>
-                    </p>
-                    <p>
-                        <code>V2.0.2</code>：
-                        <strong>新增特性</strong>：“自动生成待点名单”</p>
-                    <p>
-                        <code>V2.0.1</code>：
-                        <strong>修复Bug</strong>：“名单列表未居中”</p>
-                    <strong>已知问题</strong>
-                    <li>名单修改过程较为复杂</li>
-                    <li>参数修改过程较为复杂</li>
-                    <p>
+                   <p>由徐文博修改！</p>
                         <strong>在此特别感谢以下项目：</strong>
                     </p>
                     <li>
@@ -149,7 +146,7 @@
         </div>
     </div>
     <hr />
-    <center>RandomName V2.0.4. Licensed under BSD-2-Clause</center>
+    <center>点名器 Modify By 徐文博</center>
     <br />
     <!-- 点名结果 -->
     <div style="margin-top:10%" class="modal fade" id="Result" tabindex="-1" role="dialog" aria-labelledby="ResultLabel">
